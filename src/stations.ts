@@ -1,4 +1,13 @@
-export default {
+const stations: Record<Lines, {
+  color: string
+  stations: Record<string, {
+    code: string
+    name: string
+    name_en: string
+    name_cn: string
+    name_jp: string
+  }>
+}> = {
   "1호선": {
     color: "#0052A4",
     stations: {
@@ -5575,3 +5584,5 @@ export default {
     }
   }
 }
+
+export default stations
