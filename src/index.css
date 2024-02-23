@@ -1,6 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Korail";
+  font-weight: normal;
+  src: url("./fonts/KORAIL.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Korail_Condensed";
+  font-weight: normal;
+  src: url("./fonts/korail_Condensed.ttf") format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Korail", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

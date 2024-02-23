@@ -24,16 +24,21 @@ const Select = () => {
       }}>
         {
           bounds[nowLine].map((item, i) => {
-            const startStationName = stations[nowLine].stations[item.start].name
-            const endStationName = stations[nowLine].stations[item.end].name
-            if (item.express_pass.length != 0)
-              return (
-                <React.Fragment key={i}>
-                  <option value={`${i}/0`}>{startStationName}-{endStationName}행</option>
-                  <option value={`${i}/1`}>{startStationName}-{endStationName}급행</option>
-                </React.Fragment>
-              )
-            return (
+            const startStationName = stations[nowLine].stations[item.stations[0]].name
+            const endStationName = stations[nowLine].stations[item.stations[item.stations.length-1]].name
+            if (item.express_stations.length !== 0) // 급행 있음
+              if (item.stations.length !== 0) // 완행도 있음
+                return (
+                  <React.Fragment key={i}>
+                    <option value={`${i}/0`}>{startStationName}-{endStationName}행</option>
+                    <option value={`${i}/1`}>{startStationName}-{endStationName}급행</option>
+                  </React.Fragment>
+                )
+              else // 완행은 없음(급행만)
+                return (
+                  <option value={`${i}/1`} key={i}>{startStationName}-{endStationName}급행</option>
+                )
+            return ( // 완행만 있음
               <option value={`${i}/0`} key={i}>{startStationName}-{endStationName}행</option>
             )
           })

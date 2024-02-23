@@ -1,4 +1,6 @@
 const stations: Record<Lines, {
+  icon: string
+  fontSize?: number
   color: string
   stations: Record<string, {
     code: string
@@ -9,8 +11,30 @@ const stations: Record<Lines, {
   }>
 }> = {
   "1호선": {
+    icon: "1",
     color: "#0052A4",
     stations: {
+      "100-3": {
+        code: "100-3",
+        name: "연천",
+        name_en: "Yeoncheon",
+        name_cn: "涟川",
+        name_jp: "ヨンチョン"
+      },
+      "100-2": {
+        code: "100-2",
+        name: "전곡",
+        name_en: "Jeongok",
+        name_cn: "全谷",
+        name_jp: "チョンゴク"
+      },
+      "100-1": {
+        code: "100-1",
+        name: "청산",
+        name_en: "Cheongsan",
+        name_cn: "青山",
+        name_jp: "チョンサン"
+      },
       "100": {
         code: "100",
         name: "소요산",
@@ -536,26 +560,12 @@ const stations: Record<Lines, {
         name_cn: "军浦",
         name_jp: "クンポ"
       },
-      "100-2": {
-        code: "100-2",
-        name: "전곡",
-        name_en: "Jeongok",
-        name_cn: "全谷",
-        name_jp: "チョンゴク"
-      },
       "P174": {
         code: "P174",
         name: "배방",
         name_en: "Baebang",
         name_cn: "排芳",
         name_jp: "ペバン"
-      },
-      "100-1": {
-        code: "100-1",
-        name: "청산",
-        name_en: "Cheongsan",
-        name_cn: "青山",
-        name_jp: "チョンサン"
       },
       "P149": {
         code: "P149",
@@ -570,13 +580,6 @@ const stations: Record<Lines, {
         name_en: "Doksan",
         name_cn: "秃山",
         name_jp: "トッサン"
-      },
-      "100-3": {
-        code: "100-3",
-        name: "연천",
-        name_en: "Yeoncheon",
-        name_cn: "涟川",
-        name_jp: "ヨンチョン"
       },
       "P167": {
         code: "P167",
@@ -729,6 +732,7 @@ const stations: Record<Lines, {
   },
   "2호선": {
     color: "00A84D",
+    icon: "2",
     stations: {
       "201": {
         code: "201",
@@ -1091,6 +1095,7 @@ const stations: Record<Lines, {
   },
   "3호선": {
     color: "EF7C1C",
+    icon: "3",
     stations: {
       "309": {
         code: "309",
@@ -1404,6 +1409,7 @@ const stations: Record<Lines, {
   },
   "4호선": {
     color: "00A4E3",
+    icon: "4",
     stations: {
       "405": {
         code: "405",
@@ -1766,6 +1772,7 @@ const stations: Record<Lines, {
   },
   "5호선": {
     color: "996CAC",
+    icon: "5",
     stations: {
       "510": {
         code: "510",
@@ -2163,6 +2170,7 @@ const stations: Record<Lines, {
   },
   "6호선": {
     color: "CD7C2F",
+    icon: "7",
     stations: {
       "610": {
         code: "610",
@@ -2441,6 +2449,7 @@ const stations: Record<Lines, {
   },
   "7호선": {
     color: "747F00",
+    icon: "7",
     stations: {
       "709": {
         code: "709",
@@ -2817,6 +2826,7 @@ const stations: Record<Lines, {
   },
   "8호선": {
     color: "E6186C",
+    icon: "8",
     stations: {
       "810": {
         code: "810",
@@ -2948,6 +2958,7 @@ const stations: Record<Lines, {
   },
   "9호선": {
     color: "BDB092",
+    icon: "9",
     stations: {
       "901": {
         code: "901",
@@ -3219,6 +3230,8 @@ const stations: Record<Lines, {
   },
   "경강선": {
     color: "0054A6",
+    icon: "경강",
+    fontSize: 75,
     stations: {
       "K412": {
         code: "K412",
@@ -3301,6 +3314,8 @@ const stations: Record<Lines, {
   },
   "경의중앙선": {
     color: "77C4A3",
+    icon: "경의\n중앙",
+    fontSize: 65,
     stations: {
       "K111": {
         code: "K111",
@@ -3705,6 +3720,8 @@ const stations: Record<Lines, {
   },
   "경춘선": {
     color: "178C72",
+    icon: "경춘",
+    fontSize: 75,
     stations: {
       "P136": {
         code: "P136",
@@ -3885,6 +3902,8 @@ const stations: Record<Lines, {
   },
   "공항철도": {
     color: "0090D2",
+    icon: "공항\n철도",
+    fontSize: 65,
     stations: {
       "A03": {
         code: "A03",
@@ -3988,6 +4007,8 @@ const stations: Record<Lines, {
   },
   "김포골드라인": {
     color: "AD8605",
+    icon: "김포",
+    fontSize: 75,
     stations: {
       "690": {
         code: "690",
@@ -4063,6 +4084,8 @@ const stations: Record<Lines, {
   },
   "서해선": {
     color: "8FC31F",
+    icon: "서해",
+    fontSize: 75,
     stations: {
       "701": {
         code: "701",
@@ -4215,6 +4238,8 @@ const stations: Record<Lines, {
   },
   "수인분당선": {
     color: "FABE00",
+    icon: "수인\n분당",
+    fontSize: 65,
     stations: {
       "K212": {
         code: "K212",
@@ -4661,6 +4686,8 @@ const stations: Record<Lines, {
   },
   "신림선": {
     color: "6789CA",
+    icon: "신림",
+    fontSize: 75,
     stations: {
       "S408": {
         code: "S408",
@@ -4743,6 +4770,8 @@ const stations: Record<Lines, {
   },
   "신분당선": {
     color: "D4003B",
+    icon: "신분당",
+    fontSize: 65,
     stations: {
       "D11": {
         code: "D11",
@@ -4860,6 +4889,8 @@ const stations: Record<Lines, {
   },
   "용인에버라인": {
     color: "56AB2D",
+    icon: "용인",
+    fontSize: 75,
     stations: {
       "Y126": {
         code: "Y126",
@@ -4970,6 +5001,8 @@ const stations: Record<Lines, {
   },
   "우이신설선": {
     color: "B7C450",
+    icon: "우이",
+    fontSize: 75,
     stations: {
       "941": {
         code: "941",
@@ -5066,6 +5099,8 @@ const stations: Record<Lines, {
   },
   "의정부경전철": {
     color: "FB8100",
+    icon: "의정부",
+    fontSize: 65,
     stations: {
       "U120": {
         code: "U120",
@@ -5176,6 +5211,8 @@ const stations: Record<Lines, {
   },
   "인천2호선": {
     color: "F5A251",
+    icon: "인천2",
+    fontSize: 68,
     stations: {
       "I209": {
         code: "I209",
@@ -5370,6 +5407,8 @@ const stations: Record<Lines, {
   },
   "인천1호선": {
     color: "759CCE",
+    icon: "인천1",
+    fontSize: 68,
     stations: {
       "I128": {
         code: "I128",
