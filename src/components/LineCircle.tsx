@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import stations from "./../stations"
+import stations from "../metroData/stations"
 
 const LineCircle = (props: React.HTMLAttributes<HTMLDivElement> & {
   line?: Lines
@@ -7,7 +7,6 @@ const LineCircle = (props: React.HTMLAttributes<HTMLDivElement> & {
   stationCode?: string
   size?: number
 }) => {
-  props.size ??= 200
   const variableFontSizeCalc = (fontSize: number) => (fontSize / 200) * (props.size ?? 200) // 200px 기준
   const Circle = styled.div`
     display: grid;
@@ -20,7 +19,7 @@ const LineCircle = (props: React.HTMLAttributes<HTMLDivElement> & {
     font-size: ${`${variableFontSizeCalc((stations[props.line!].fontSize ?? null) ?? 125)}px`}; // 125px기본 (원이 200px일때)
     color: #ffffff;
     align-content: center;
-    width: ${`${props.size}px`};
+    width: ${`${props.size ?? 200}px`};
     white-space: pre-line;
   `
   if (props.line !== undefined && props.stationCode)

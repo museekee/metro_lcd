@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import LineCircle from "./LineCircle"
-import stations from "./../stations"
+import stations from "../metroData/stations"
 import ProgressBar from "./ProgressBar"
-import bounds from "../bounds"
+import bounds from "../metroData/bounds"
 
 const Header: React.FC<{
   line: Lines
   bound: {
     stations: string[]
     express_stations: string[]
-}
+  }
 }> = ({line, bound}) => {
   const HeaderElem = styled.header`
     display: grid;
@@ -23,10 +23,7 @@ const Header: React.FC<{
   `
   return (
     <HeaderElem>
-      {/* <LineCircle style={{
-        width: 200
-      }} line={line} color={stations[line].color} /> */}
-      <LineCircle size={200} line={line} stationCode="142" color={stations[line].color} />
+      <LineCircle size={200} line={line} color={stations[line].color} />
       <TopDistance line={line} before={bound.stations[0]} now={bound.stations[1]} />
     </HeaderElem>
   )

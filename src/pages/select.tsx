@@ -1,23 +1,27 @@
-import stations from "./../stations"
-import bounds from "./../bounds"
+import stations from "../metroData/stations"
+import bounds from "../metroData/bounds"
 import { useState } from "react"
 import React from "react"
 import { Link } from "react-router-dom"
+import styled from "styled-components"
 
 const Select = () => {
   const [nowLine, setNowLine] = useState<Lines>("1호선")
   const [nowBound, setNowBound] = useState(0)
   const [isExpress, setIsExpress] = useState(0) // 0: 완행, 1: 급행
+  const H1 = styled.h1`
+    font-weight: normal;
+  `
   return (
     <>
-      <h1>노선 선택</h1>
+      <H1>노선 선택</H1>
       <select defaultValue={nowLine} onChange={(e) => setNowLine(e.target.value as Lines)}>
         {
           Object.keys(stations).map((v, i) => <option key={i} value={v}>{v}</option>)
         }
       </select>
       <hr />
-      <h1>행선지 선택</h1>
+      <H1>행선지 선택</H1>
       <select onChange={(e) => {
         setNowBound(parseInt(e.target.value.split("/")[0]))
         setIsExpress(parseInt(e.target.value.split("/")[1]))

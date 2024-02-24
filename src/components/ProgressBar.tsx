@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import stations from "./../stations"
+import stations from "../metroData/stations"
 import { normal } from "color-blend"
 
 const ProgressBar: React.FC<{
