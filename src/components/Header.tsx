@@ -3,15 +3,12 @@ import styled from "styled-components"
 import LineCircle from "./LineCircle"
 import stations from "../metroData/stations"
 import ProgressBar from "./ProgressBar"
-import bounds from "../metroData/bounds"
 
 const Header: React.FC<{
-  line: Lines
-  bound: {
-    stations: string[]
-    express_stations: string[]
-  }
-}> = ({line, bound}) => {
+  line: Lines,
+  before: string,
+  now: string,
+}> = ({line, before, now}) => {
   const HeaderElem = styled.header`
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -24,7 +21,7 @@ const Header: React.FC<{
   return (
     <HeaderElem>
       <LineCircle size={200} line={line} color={stations[line].color} />
-      <TopDistance line={line} before={bound.stations[0]} now={bound.stations[1]} />
+      <TopDistance line={line} before={before} now={now} />
     </HeaderElem>
   )
 }

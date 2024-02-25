@@ -1,3 +1,20 @@
+/*
+import stations from "./stations"
+let allStations: Record<string, {line: Lines, stationCode: string}[]> = {};
+for (const line in stations) {
+  for (const stationCode in stations[line as Lines].stations) {
+    let stationName = stations[line as Lines].stations[stationCode].name;
+    if (!allStations[stationName]) {
+      allStations[stationName] = [];
+    }
+    allStations[stationName].push({
+      line: line as Lines,
+      stationCode: stationCode
+    })
+  }
+}
+*/
+
 const transfers = {
   "소요산": [
     {
