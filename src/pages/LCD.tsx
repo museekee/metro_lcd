@@ -7,7 +7,7 @@ import { useState } from "react"
 import Arrival from "../components/Arrival"
 
 const LCD = () => {
-  const [nowLCD, setNowLCD] = useState(0)
+  const [nowLCD, setNowLCD] = useState(1)
   const [nowStationIdx, setNowStationIdx] = useState(10)
   const params = useParams()
   const line = params.line as Lines

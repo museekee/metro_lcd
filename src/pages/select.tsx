@@ -11,6 +11,8 @@ const Select = () => {
   const [isExpress, setIsExpress] = useState(0) // 0: 완행, 1: 급행
   const H1 = styled.h1`
     font-weight: normal;
+    margin: 0;
+    padding: 20px;
   `
   return (
     <>

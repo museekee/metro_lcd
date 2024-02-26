@@ -16,7 +16,7 @@ const LineCircle = (props: React.HTMLAttributes<HTMLDivElement> & {
     aspect-ratio: 1;
     align-items: center;
     justify-content: center;
-    font-size: ${`${variableFontSizeCalc((stations[props.line!].fontSize ?? null) ?? 125)}px`}; // 125px기본 (원이 200px일때)
+    font-size: ${`${variableFontSizeCalc((props.line ? stations[props.line].fontSize : null) ?? 125)}px`}; // 125px기본 (원이 200px일때)
     color: #ffffff;
     align-content: center;
     width: ${`${props.size ?? 200}px`};
