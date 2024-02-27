@@ -8,7 +8,7 @@ import Arrival from "../components/Arrival"
 
 const LCD = () => {
   const [nowLCD, setNowLCD] = useState(1)
-  const [nowStationIdx, setNowStationIdx] = useState(10)
+  const [nowStationIdx, setNowStationIdx] = useState(43)
   const params = useParams()
   const line = params.line as Lines
   const bound = bounds[line][parseInt(params.bound!)]

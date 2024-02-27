@@ -2,11 +2,14 @@ import styled from "styled-components"
 
 const Car = ({
   number,
-  congestion
+  congestion,
+  isThisCar
 }: {
   number: number
-  congestion: 0|1|2|3
+  congestion: 0|1|2|3,
+  isThisCar?: boolean
 }) => {
+  isThisCar ??= false
   const congestionData = [
     { label: "여유", color: "#3599FF" },
     { label: "보통", color: "#35FF35" },
@@ -19,6 +22,8 @@ const Car = ({
     grid-template-rows: auto 100px;
     gap: 10px;
     height: fit-content;
+    box-sizing: content-box;
+    box-shadow: 0 10px 20px 16px #ffec3d;
   `
   const Text = styled.span`
     font-size: 50px;
@@ -33,7 +38,12 @@ const Car = ({
     justify-content: center;
   `
   return (
-    <Mother>
+    <Mother style={{
+      boxShadow: isThisCar ? undefined : "none",
+      padding: isThisCar ? "5px" : "0px",
+      margin: isThisCar ? "15px" : "0px",
+      transform: isThisCar ? "translateY(-50px)" : "none"
+    }}>
       <Text>{number}</Text>
       <CarBox>
         <Text>
