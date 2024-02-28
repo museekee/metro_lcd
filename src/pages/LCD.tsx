@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom"
 import Header from "../components/Header"
 import BoundLCD from "../components/Bound"
 import { useState } from "react"
-import Arrival from "../components/Arrival"
+import ArrivalLCD from "../components/Arrival"
+import DoorLCD from "../components/Door"
 
 const LCD = () => {
-  const [nowLCD, setNowLCD] = useState(1)
+  const [nowLCD, setNowLCD] = useState(2)
   const [nowStationIdx, setNowStationIdx] = useState(43)
   const params = useParams()
   const line = params.line as Lines
@@ -17,7 +18,8 @@ const LCD = () => {
   const now = bound.stations[nowStationIdx]
   const lcd = [
     <BoundLCD line={line} bound={bound} expressType={expressType} />,
-    <Arrival line={line} stationCode={bound.stations[nowStationIdx]} />
+    <ArrivalLCD line={line} stationCode={bound.stations[nowStationIdx]} />,
+    <DoorLCD line={line} stationCode={bound.stations[nowStationIdx]} />,
   ]
   return (
     <div style={{display: "grid", gridTemplateRows: "auto 1fr", height: "100%"}}>

@@ -3,6 +3,7 @@ import Car from "./Car"
 import styled from "styled-components"
 import LineCircle from "./LineCircle"
 import stations from "../metroData/stations"
+import ArrivalStation from "./ArrivalStation"
 
 /**
  * 
@@ -11,7 +12,7 @@ import stations from "../metroData/stations"
  */
 // const random = (n: number) => Math.floor(Math.random() * n)
 
-const Arrival = ({
+const ArrivalLCD = ({
   line, stationCode
 }: {
   line: Lines, stationCode: string
@@ -33,15 +34,7 @@ const Arrival = ({
     align-items: center;
     gap: 150px;
   `
-  const Station = styled.div`
-    display: grid;
-    grid-template-columns: 150px auto;
-    grid-template-rows: 150px auto;
-    column-gap: 25px;
-    transition: 0.5s transform;
-    transform: scaleY(0);
-    transform-origin: top;
-  `
+
   const Cars = styled.div`
     display: flex;
     gap: 15px;
@@ -54,13 +47,9 @@ const Arrival = ({
   // const thisCar = random(maxCar)
   return (
     <Stage>
-      <Station ref={station}>
-        <LineCircle color={stations[line].color} size={150} stationCode={stationCode}/>
-        <span style={{fontSize: 150}}>{stations[line].stations[stationCode].name}</span>
-        <span style={{fontSize: 75, gridColumn: 2}}>{stations[line].stations[stationCode].name_en}</span>
-      </Station>
+      <ArrivalStation line={line} stationCode={stationCode} ref={station} />
       <Cars ref={cars}>
-      <Car number={1} congestion={0}/>
+        <Car number={1} congestion={0}/>
         <Car number={2} congestion={1}/>
         <Car number={3} congestion={1}/>
         <Car number={4} congestion={2}/>
@@ -83,4 +72,4 @@ const Arrival = ({
   )
 }
 
-export default Arrival
+export default ArrivalLCD
