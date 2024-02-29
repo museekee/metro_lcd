@@ -3,6 +3,7 @@ import styled from "styled-components"
 import LineCircle from "./LineCircle"
 import stations from "../metroData/stations"
 import ProgressBar from "./ProgressBar"
+import { Lines } from "../metroData/types"
 
 const Header: React.FC<{
   line: Lines,

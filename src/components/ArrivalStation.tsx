@@ -2,6 +2,7 @@ import styled from "styled-components"
 import LineCircle from "./LineCircle"
 import stations from "../metroData/stations"
 import { forwardRef } from "react"
+import { Lines } from "../metroData/types"
 
 const ArrivalStation = (props: React.HTMLAttributes<HTMLDivElement> & {
   line: Lines

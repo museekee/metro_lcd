@@ -3,6 +3,7 @@ import styled from "styled-components"
 import ArrivalStation from "./ArrivalStation"
 import LeftDoorImg from "./../images/Door_Left.svg"
 import RightDoorImg from "./../images/Door_Right.svg"
+import { Lines } from "../metroData/types"
 
 enum Door {
   Left,
@@ -30,7 +31,7 @@ const DoorLCD = (props: {
     align-items: center;
     height: 100%;
     gap: 60px;
-    flex-direction: ${door == Door.Left ? "row" : "row-reverse"};
+    flex-direction: ${door === Door.Left ? "row" : "row-reverse"};
   `
 
   return (
@@ -38,7 +39,7 @@ const DoorLCD = (props: {
       <ArrivalStation line={line} stationCode={stationCode} ref={station} />
       <DoorDiv>
         <span style={{fontSize: 125}}>내리실 문</span>
-        <img style={{height: 350}} src={doors[door]} />
+        <img style={{height: 350}} src={doors[door]} alt={door === Door.Left ? "왼쪽" : "오른쪽"} />
       </DoorDiv>
     </Stage>
   )

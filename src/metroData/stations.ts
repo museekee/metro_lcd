@@ -1,3 +1,5 @@
+import { Lines } from "./types"
+
 const stations: Record<Lines, {
   icon: string
   fontSize?: number

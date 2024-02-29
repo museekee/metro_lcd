@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import stations from "../metroData/stations"
+import { Lines } from "../metroData/types"
 
 const LineCircle = (props: React.HTMLAttributes<HTMLDivElement> & {
   line?: Lines

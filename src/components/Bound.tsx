@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import LineCircle from "./LineCircle"
 import stations from "../metroData/stations"
+import { ExpressType, Lines } from "../metroData/types"
 
 const BoundLCD: React.FC<{
   line: Lines

@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import Car from "./Car"
 import styled from "styled-components"
-import LineCircle from "./LineCircle"
-import stations from "../metroData/stations"
 import ArrivalStation from "./ArrivalStation"
+import { Lines } from "../metroData/types"
 
 /**
  * 

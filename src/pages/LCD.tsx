@@ -6,6 +6,7 @@ import BoundLCD from "../components/Bound"
 import { useState } from "react"
 import ArrivalLCD from "../components/Arrival"
 import DoorLCD from "../components/Door"
+import { Lines, ExpressType } from "../metroData/types"
 
 /**
  * 

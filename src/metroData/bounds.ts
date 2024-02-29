@@ -1,3 +1,5 @@
+import type { Bound, Lines } from "./types"
+
 const splitArray = <T>(arr: T[], value: T): T[][] => {
   const index = arr.indexOf(value)
   return [arr.slice(0, index), arr.slice(index + 1)]
@@ -20,16 +22,16 @@ const 구로경원 = [
   '137', '138', '139', '140'
 ]
 
-const bounds: Record<Lines, {
-  stations: string[]
-  express_stations: string[]
-}[]> = {
+const bounds: Record<Lines, Bound[]> = {
   "1호선": [
     {
       stations: [...구로경부.reverse(), '141', ...splitArray(구로경원, '124')[1].reverse(), '124'],
       express_stations: [...구로경부.reverse(), '141', ...splitArray(구로경원, '124')[1].reverse(), '124'].filter(v => ![
         "P164", "P162", "P161", "P159", "P158", "P156", "P154", "P151", "P150", "P148", "P146", "P145"
-      ].includes(v))
+      ].includes(v)),
+      branch: {
+        "141": ["142"]
+      }
     }
   ],
   "2호선": [],
@@ -44,7 +46,8 @@ const bounds: Record<Lines, {
   "경의중앙선": [
     {
       stations: ["K334", "K316", "K315", "K314", "K313", "K312"],
-      express_stations: []
+      express_stations: [],
+      branch: {}
     }
   ],
   "경춘선": [],

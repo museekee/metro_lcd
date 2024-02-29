@@ -4,6 +4,7 @@ import { useState } from "react"
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import { Lines } from "../metroData/types"
 
 const Select = () => {
   const [nowLine, setNowLine] = useState<Lines>("1호선")

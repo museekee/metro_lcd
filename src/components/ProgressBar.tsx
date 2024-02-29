@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import stations from "../metroData/stations"
 import { normal } from "color-blend"
+import { Lines } from "../metroData/types"
 
 const ProgressBar: React.FC<{
   line: Lines
