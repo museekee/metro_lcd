@@ -7,6 +7,7 @@ import { useState } from "react"
 import ArrivalLCD from "../components/Arrival"
 import DoorLCD from "../components/Door"
 import { Lines, ExpressType } from "../metroData/types"
+import TransferLCD from "../components/Transfer"
 
 /**
  * 
@@ -16,8 +17,8 @@ import { Lines, ExpressType } from "../metroData/types"
 const random = (n: number) => Math.floor(Math.random() * n)
 
 const LCD = () => {
-  const [nowLCD, setNowLCD] = useState(2)
-  const [nowStationIdx, setNowStationIdx] = useState(43)
+  const [nowLCD, setNowLCD] = useState(3)
+  const [nowStationIdx, setNowStationIdx] = useState(19)
   const params = useParams()
   const line = params.line as Lines
   const bound = bounds[line][parseInt(params.bound!)]
@@ -28,6 +29,7 @@ const LCD = () => {
     <BoundLCD line={line} bound={bound} expressType={expressType} />,
     <ArrivalLCD line={line} stationCode={bound.stations[nowStationIdx]} />,
     <DoorLCD line={line} stationCode={bound.stations[nowStationIdx]} door={random(2)} />,
+    <TransferLCD line={line} stationCode={bound.stations[nowStationIdx]} bound={bound} />
   ]
   return (
     <div style={{display: "grid", gridTemplateRows: "auto 1fr", height: "100%"}}>

@@ -15,7 +15,9 @@ for (const line in stations) {
 }
 */
 
-const transfers = {
+import { Lines } from "./types"
+
+const transfers: Record<string, {line: Lines, stationCode: string}[]> = {
   "소요산": [
     {
       line: "1호선",

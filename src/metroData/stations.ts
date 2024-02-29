@@ -3232,8 +3232,8 @@ const stations: Record<Lines, {
   },
   "경강선": {
     color: "#0054A6",
-    icon: "경강",
-    fontSize: 75,
+    icon: "경강선",
+    fontSize: 65,
     stations: {
       "K412": {
         code: "K412",
@@ -3722,8 +3722,8 @@ const stations: Record<Lines, {
   },
   "경춘선": {
     color: "#178C72",
-    icon: "경춘",
-    fontSize: 75,
+    icon: "경춘선",
+    fontSize: 65,
     stations: {
       "P136": {
         code: "P136",
@@ -4009,8 +4009,8 @@ const stations: Record<Lines, {
   },
   "김포골드라인": {
     color: "#AD8605",
-    icon: "김포",
-    fontSize: 75,
+    icon: "김포\n골드",
+    fontSize: 65,
     stations: {
       "690": {
         code: "690",
@@ -4086,8 +4086,8 @@ const stations: Record<Lines, {
   },
   "서해선": {
     color: "#8FC31F",
-    icon: "서해",
-    fontSize: 75,
+    icon: "서해선",
+    fontSize: 65,
     stations: {
       "701": {
         code: "701",
@@ -4688,8 +4688,8 @@ const stations: Record<Lines, {
   },
   "신림선": {
     color: "#6789CA",
-    icon: "신림",
-    fontSize: 75,
+    icon: "신림선",
+    fontSize: 65,
     stations: {
       "S408": {
         code: "S408",
@@ -5003,8 +5003,8 @@ const stations: Record<Lines, {
   },
   "우이신설선": {
     color: "#B7C450",
-    icon: "우이",
-    fontSize: 75,
+    icon: "우이\n신설",
+    fontSize: 65,
     stations: {
       "941": {
         code: "941",
