@@ -4,27 +4,42 @@ import ArrivalStation from "./ArrivalStation"
 import LeftDoorImg from "./../images/Door_Left.svg"
 import RightDoorImg from "./../images/Door_Right.svg"
 
-const DoorLCD = ({
-  line, stationCode
-}: {
-  line: Lines, stationCode: string
+enum Door {
+  Left,
+  Right
+}
+
+const DoorLCD = (props: {
+  line: Lines, stationCode: string, door?: Door
 }) => {
+  const { line, stationCode, door = Door.Left } = props;
   const station = useRef<HTMLDivElement>(null)
   useEffect(() => {
     station.current?.style.setProperty("transition", "none")
     station.current?.style.setProperty("transform", "scaleY(1)")
   }, [])
 
+  const doors = [LeftDoorImg, RightDoorImg]
   const Stage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 150px;
+  `
+  const DoorDiv = styled.div`
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 60px;
+    flex-direction: ${door == Door.Left ? "row" : "row-reverse"};
   `
 
   return (
     <Stage>
       <ArrivalStation line={line} stationCode={stationCode} ref={station} />
+      <DoorDiv>
+        <span style={{fontSize: 125}}>내리실 문</span>
+        <img style={{height: 350}} src={doors[door]} />
+      </DoorDiv>
     </Stage>
   )
 }

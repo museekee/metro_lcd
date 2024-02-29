@@ -7,6 +7,13 @@ import { useState } from "react"
 import ArrivalLCD from "../components/Arrival"
 import DoorLCD from "../components/Door"
 
+/**
+ * 
+ * @param n 최고숫자
+ * @returns 0이상 n미만의 정수
+ */
+const random = (n: number) => Math.floor(Math.random() * n)
+
 const LCD = () => {
   const [nowLCD, setNowLCD] = useState(2)
   const [nowStationIdx, setNowStationIdx] = useState(43)
@@ -19,7 +26,7 @@ const LCD = () => {
   const lcd = [
     <BoundLCD line={line} bound={bound} expressType={expressType} />,
     <ArrivalLCD line={line} stationCode={bound.stations[nowStationIdx]} />,
-    <DoorLCD line={line} stationCode={bound.stations[nowStationIdx]} />,
+    <DoorLCD line={line} stationCode={bound.stations[nowStationIdx]} door={random(2)} />,
   ]
   return (
     <div style={{display: "grid", gridTemplateRows: "auto 1fr", height: "100%"}}>
